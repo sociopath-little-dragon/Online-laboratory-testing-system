@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&family=Montserrat:wght@500&display=swap');
+
+.section__lab-page{
+    width: 1246px;
+    height: 120px;
+    background: rgba(226, 237, 208, 0.55);
+    border-radius: 10px;
+    list-style: none;
+}
+
+
+

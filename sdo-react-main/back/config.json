@@ -1,0 +1,13 @@
+{
+  "origins": [
+    "*"
+  ],
+  "credentials": true,
+  "methods": [
+    "*"
+  ],
+  "headers": [
+    "*"
+  ],
+  "secret_key": "test"
+}
