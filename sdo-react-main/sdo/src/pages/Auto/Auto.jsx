@@ -64,7 +64,7 @@ const Auto = () => {
   const navigate = useNavigate();
 
   const handleSuccessfulLogin = () => {
-    fetch('http://127.0.0.1:8000/user-status', {
+    fetch('http://127.0.0.1:8040/user_status', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('access_token')}`
@@ -104,7 +104,7 @@ const Auto = () => {
       body: JSON.stringify({ 'username': username, 'password': password })
     };
 
-    fetch('http://127.0.0.1:8000/login', requestOptions)
+    fetch('http://127.0.0.1:8040/login', requestOptions)
       .then(response => {
         if (response.ok) {
           return response.json();

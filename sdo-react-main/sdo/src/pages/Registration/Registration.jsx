@@ -72,7 +72,7 @@ const Registration = () => {
     };
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/register', requestOptions);
+      const response = await fetch('http://127.0.0.1:8040/register', requestOptions);
   
       if (!response.ok) {
         throw new Error('Не удалось зарегистрироваться');
