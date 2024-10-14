@@ -1,13 +1,32 @@
 {
-  "origins": [
-    "*"
-  ],
-  "credentials": true,
-  "methods": [
-    "*"
-  ],
-  "headers": [
-    "*"
-  ],
-  "secret_key": "test"
+  "cors": {
+    "origins": ["http://localhost", "http://localhost:8000"],
+    "credentials": true,
+    "methods": ["GET", "POST"],
+    "headers": ["*"]
+  },
+  "secret_key": "test",
+
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8000
+  },
+  "encryption": {
+    "algorithm": "bcrypt",
+    "key": "your-encryption-key"
+  },
+  "api": {
+    "url": "http://127.0.0.1:8000"
+  },
+  "uvicorn": {
+    "host": "0.0.0.0",
+    "port": 8002
+  },
+  "database": {
+    "connection_string": "sqlite:///database/tst.db"
+  },
+  "jwt": {
+    "secret_key": "test",
+    "algorithm": "HS256"
+}
 }
