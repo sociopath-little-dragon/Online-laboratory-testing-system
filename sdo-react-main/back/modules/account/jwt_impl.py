@@ -1,11 +1,17 @@
+import json
+from sys import modules
+
 from modules.database.dbconnector import get_user_db
+from ..configs.config_funcs import *
 import jwt
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from datetime import datetime, timedelta
 
-SECRET_KEY = "test"  # TODO: исправить получение из конфига
-ALGORITHM = "HS256"
+config = load_config()
+
+SECRET_KEY = config["jwt"]['secret_key']  # TODO: исправить получение из конфига
+ALGORITHM = config["jwt"]['algorithm']
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 

@@ -12,6 +12,7 @@ from modules.models.db_class import *
 from modules.test.test_main import *
 from modules.analize.check_symbols import *
 from modules.account.jwt_impl import *
+from modules.configs.config_funcs import *
 from passlib.context import CryptContext
 import json
 import os
@@ -20,18 +21,17 @@ import random
 import string
 import datetime
 
-with open("config.json", 'r') as config_file:
-    config_data = json.load(config_file)
+config = load_config()
 
 app = FastAPI()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=config_data['origins'],
-    allow_credentials=config_data['credentials'],
-    allow_methods=config_data['methods'],
-    allow_headers=config_data['headers']
+    allow_origins=config["cors"]['origins'],
+    allow_credentials=config["cors"]['credentials'],
+    allow_methods=config["cors"]['methods'],
+    allow_headers=config["cors"]['headers']
 )
 
 init_test_db_data()

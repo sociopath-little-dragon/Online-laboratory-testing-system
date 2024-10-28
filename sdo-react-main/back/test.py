@@ -1,6 +1,10 @@
+import json
 import requests
+from modules.configs.config_funcs import *
 
-URL = 'http://127.0.0.1:8000'
+config = load_config()
+
+URL = config["api"]["url"]
 SESSION = requests.Session()
 
 def create_group(name):
