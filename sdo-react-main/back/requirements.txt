@@ -1,8 +1,8 @@
-sqlalchemy
+sqlalchemy===2.0.35
 fastapi
 pylint
 pytest
 uvicorn
 psycopg2-binary
-jwt
+PyJWT
 passlib
